@@ -8,7 +8,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     let mut firewalls_csv = ReaderBuilder::new()
         .delimiter(b',')
         .has_headers(true)
-        .from_path("firewalls21jan25.csv")?;
+        .from_path("src/firewalls21jan25.csv")?;
 
     // Criar um HashSet com os nomes dos firewalls do CSV
     let mut firewalls_set = HashSet::new();
@@ -20,7 +20,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     }
 
     // Lista de arquivos Excel
-    let excel_files = ["FW - MCK.xlsx", "FW - LPA.xlsx", "FW - CAS.xlsx"];
+    let excel_files = ["src/FW - MCK.xlsx", "src/FW - LPA.xlsx", "src/FW - CAS.xlsx"];
 
     // Iterar sobre os arquivos Excel e procurar os nomes
     for file in excel_files {
